@@ -2,7 +2,7 @@
 
 - En este archivo README.md vamos a ver todo lo relacionado con la practica final del módulo.
 - El repositorio se llama docker-k8s-carlosfeu
-- Accederemos a el a través de gitclone https://github.com/KeepCodingCloudDevops6/docker-k8s-carlosfeu.git
+- Accederemos a el a través de gitclone https://github.com/carlosfeufernandez/docker-k8s-carlosfeu.git
 - Se ha desplegado en un cluster con 3 nodos, en la version 1.23.8 de GKE, en una maquina con 2GB de RAM y de 0'5 a 2 CPU(e2.small). En la zona europe-west-b, esta información es para desplegar K8s y Helm Charts con esta configuración.
 
 ## Docker
