@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deploy
+  namespace: counter-app-db
+  labels:
+    app: contador-visitantes
+spec:
+  selector:
+    matchLabels:
+      app: contador-visitantes
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: contador-visitantes
+    spec:
+      containers:
+      - name: contador-visitantes
+        image: carlosfeufernandez/contador-visitantes:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+        env:
+        - name: MYSQL_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: counterapp
+              key: host
+        - name: MYSQL_DB
+          valueFrom:
+            configMapKeyRef:
+              name: counterapp
+              key: dbname
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: secret-db
+              key: userpassword
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: secret-db
+              key: username

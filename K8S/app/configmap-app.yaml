@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  dbname: contador-db
+  host: mysql-db
+kind: ConfigMap
+metadata:
+  name: counterapp
+  namespace: counter-app-db

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: counterapp-service
+  namespace: counter-app-db
+spec:
+  type: LoadBalancer
+  selector:
+    app: contador-visitantes
+  ports:
+  - protocol: TCP 
+    port: 5000
+    targetPort: 5000
+
+  
